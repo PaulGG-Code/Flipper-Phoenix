@@ -1,5 +1,6 @@
 #include "uart_text_input.h"
 #include <gui/elements.h>
+#include "phoenix_morseflash_icons.h"
 #include <furi.h>
 
 struct UART_TextInput {
