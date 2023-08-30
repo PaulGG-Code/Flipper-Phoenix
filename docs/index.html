@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap'); /* Importing a hacker-like font */
+
         body {
             margin: 0;
             padding: 0;
@@ -15,11 +17,15 @@
         }
 
         h1 {
-            color: #f7ff00;
+            font-family: 'Orbitron', sans-serif; /* Using the hacker-like font */
+            background: linear-gradient(45deg, #f7ff00, #f7ff00); /* Consistent yellow gradient */
+            -webkit-background-clip: text;
+            color: transparent;
             border-bottom: 2px solid #0f0;
             padding-bottom: 10px;
             padding-top: 20px;
             text-align: center;
+            text-shadow: 2px 2px 4px #f7ff00; /* Yellow glowing effect */
         }
 
         ul {
