@@ -1,109 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Phoenix for Flipper Zero</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background-color: #000;
-        color: #f7ff00;
-        ;
-        font-family: 'Courier New', monospace;
-      }
 
-      .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        padding: 20px;
-      }
+<head>
+  <title>Phoenix for Flipper Zero</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    @font-face {
+      font-family: 'Freezer';
+      src: url('../assets/Freezer-jm67.ttf') format('truetype');
+    }
 
-      .left-div,
-      .right-div {
-        padding: 20px;
-        background-color: #111;
-        border: 1px solid #0f0;
-        border-radius: 5px;
-      }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #f7ff00;
+      ;
+      font-family: 'Courier New', monospace;
+    }
 
-      .left-div {
-        flex: 1;
-      }
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      padding: 20px;
+    }
 
-      .right-div {
-        flex: 1;
-        margin-left: 20px;
-      }
+    .left-div,
+    .right-div {
+      padding: 20px;
+      background-color: #111;
+      border: 1px solid #0f0;
+      border-radius: 5px;
+    }
 
-      a {
-        color: #0f0;
-        text-decoration: none;
-      }
+    .left-div {
+      flex: 1;
+    }
 
-      a:hover {
-        text-decoration: underline;
-      }
+    .right-div {
+      flex: 1;
+      margin-left: 20px;
+    }
 
-   h1 {
-            font-family: 'Orbitron', sans-serif; /* Using the hacker-like font */
-            background: linear-gradient(45deg, #f7ff00, #f7ff00); /* Consistent yellow gradient */
-            -webkit-background-clip: text;
-            color: transparent;
-            border-bottom: 2px solid #0f0;
-            padding-bottom: 10px;
-            padding-top: 20px;
-            text-align: center;
-            text-shadow: 2px 2px 4px #f7ff00; /* Yellow glowing effect */
+    a {
+      color: #0f0;
+      text-decoration: none;
+    }
 
-      ul {
-        list-style-type: square;
-        padding-left: 20px;
-      }
+    a:hover {
+      text-decoration: underline;
+    }
 
-      strong {
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Phoenix for Flipper Zero - Installer</h1>
-    <script type="module" src="https://unpkg.com/esp-web-tools@3.4.2/dist/web/install-button.js?module"></script>
-    <div class="container">
-      <div class="left-div">
-        <p>If you have <a href="https://flipper-xtre.me/update/" target="_blank">Xtreme firmware</a> on your Flipper Zero, then the apps are already on <i>Apps/GPIO</i>. You can also manually install them, one by one, using the links below: </p>
-        <ul>
-          <li>
-            <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_marauder_companion&amp;firmware=unleashed" target="_blank">PHOENIX_Marauder.fap</a>
-          </li>
-          <li>
-            <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_camera&amp;firmware=unleashed" target="_blank">PHOENIX_Camera.fap</a>
-          </li>
-          <li>
-            <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_morseflasher&amp;firmware=unleashed" target="_blank">PHOENIX_MorseFlasher.fap</a> (decoder app: <a target="_blank" href=https://m.apkpure.com/morse-code-agent-standard/com.erdatsai.morsecodeagent>apk</a>/ <a target="_blank" href="https://play.google.com/store/apps/details?id=com.erdatsai.morsecodeagentpro">pro</a>)
-          </li>
-          <li>
-            <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_nannycam&amp;firmware=unleashed" target="_blank">PHOENIX_NannyCam.fap</a>
-          </li>
-          <li>
-            <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_motion_detection&amp;firmware=unleashed" target="_blank">PHOENIX_Motion.fap</a>
-          </li>
-          <li>
-            <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_qrcode&amp;firmware=unleashed" target="_blank">PHOENIX_QRcode.fap</a>
-          </li>
-          <li>
-            <a href="https://flipc.org/paulgg-code/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_evilportal&amp;firmware=unleashed" target="_blank">PHOENIX_EvilPortal.fap</a> (you also need the folder <i>apps_data/evil_portal</i> from <a target="_blank" href="https://github.com/bigbrodude6119/flipper-zero-evil-portal/">here</a>)
-          </li>
-        </ul>
-        <!-- Rest of your content here -->
-        <esp-web-install-button manifest="build/manifest.json"></esp-web-install-button>
-        <p>Enjoy!</p>
-      </div>
-      <div class="right-div">
-        <iframe width="100%" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
+    h1 {
+      font-family: 'Freezer';
+      /* Using the Freezer font */
+      background: linear-gradient(45deg, #f7ff00, #f7ff00);
+      /* Consistent yellow gradient */
+      -webkit-background-clip: text;
+      color: transparent;
+      border-bottom: 2px solid #0f0;
+      padding-bottom: 10px;
+      padding-top: 20px;
+      text-align: center;
+      text-shadow: 2px 2px 4px #f7ff00;
+      /* Yellow glowing effect */
+    }
+
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    strong {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Phoenix for Flipper Zero - Installer</h1>
+  <script type="module" src="https://unpkg.com/esp-web-tools@3.4.2/dist/web/install-button.js?module"></script>
+  <div class="container">
+    <div class="left-div">
+      <p>If you have <a href="https://flipper-xtre.me/update/" target="_blank">Xtreme firmware</a> on your Flipper Zero,
+        then the apps are already on <i>Apps/GPIO</i>. You can also manually install them, one by one, using the links
+        below: </p>
+      <ul>
+        <li>
+          <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_marauder_companion&amp;firmware=unleashed"
+            target="_blank">PHOENIX_Marauder.fap</a>
+        </li>
+        <li>
+          <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_camera&amp;firmware=unleashed"
+            target="_blank">PHOENIX_Camera.fap</a>
+        </li>
+        <li>
+          <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_morseflasher&amp;firmware=unleashed"
+            target="_blank">PHOENIX_MorseFlasher.fap</a> (decoder app: <a target="_blank"
+            href=https://m.apkpure.com/morse-code-agent-standard/com.erdatsai.morsecodeagent>apk</a>/ <a target="_blank"
+            href="https://play.google.com/store/apps/details?id=com.erdatsai.morsecodeagentpro">pro</a>)
+        </li>
+        <li>
+          <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_nannycam&amp;firmware=unleashed"
+            target="_blank">PHOENIX_NannyCam.fap</a>
+        </li>
+        <li>
+          <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_motion_detection&amp;firmware=unleashed"
+            target="_blank">PHOENIX_Motion.fap</a>
+        </li>
+        <li>
+          <a href="https://flipc.org/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_qrcode&amp;firmware=unleashed"
+            target="_blank">PHOENIX_QRcode.fap</a>
+        </li>
+        <li>
+          <a href="https://flipc.org/paulgg-code/PaulGG-Code/Flipper-Phoenix?root=flipper_companion_apps/applications/plugins/esp32cam_evilportal&amp;firmware=unleashed"
+            target="_blank">PHOENIX_EvilPortal.fap</a> (you also need the folder <i>apps_data/evil_portal</i> from <a
+            target="_blank" href="https://github.com/bigbrodude6119/flipper-zero-evil-portal/">here</a>)
+        </li>
+      </ul>
+      <!-- Rest of your content here -->
+      <esp-web-install-button manifest="build/manifest.json"></esp-web-install-button>
+      <p>Enjoy!</p>
     </div>
-  </body>
+    <div class="right-div">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/" title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</body>
+
 </html>
