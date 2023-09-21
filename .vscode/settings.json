@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "wifi_marauder_script_executor.h": "c",
+        "wifi_marauder_script_worker.h": "c"
+    }
+}
