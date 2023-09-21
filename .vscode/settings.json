@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "wifi_marauder_script_executor.h": "c",
-        "wifi_marauder_script_worker.h": "c"
+        "wifi_marauder_script_worker.h": "c",
+        "wifi_marauder_custom_event.h": "c",
+        "wifi_marauder_uart.h": "c",
+        "wifi_marauder_script_stage_menu.h": "c",
+        "wifi_marauder_text_input.h": "c"
     }
 }
