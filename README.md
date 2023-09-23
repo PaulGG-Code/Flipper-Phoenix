@@ -7,8 +7,11 @@
   <img src="https://github.com/PaulGG-Code/Flipper-Phoenix/assets/34073221/a5adda40-9c21-44d1-9c15-1a6f12275b10" width="400" /> 
 </p>
 
-**Buy one:** [Tindie Store](https://www.tindie.com/stores/flipperphoenix/)
+**Buy one:** [Tindie Store](https://www.tindie.com/stores/flipperphoenix/) or [Local](https://shop.flipperphoenix.xyz)
 
+**Website:** [Website](https://flipperphoenix.xyz)
 **Get started:** [wiki/First-steps](https://github.com/PaulGG-Code/Flipper-Phoenix/wiki/First-steps)
+**Docs:** [Wiki](https://wiki.flipperphoenix.xyz)
+**Flasher:** [Installer](https://flipperphoenix.xyz/webinstaller)
 
 
