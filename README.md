@@ -10,8 +10,11 @@
 **Buy one:** [Tindie Store](https://www.tindie.com/stores/flipperphoenix/) or [Local](https://shop.flipperphoenix.xyz)
 
 **Website:** [Website](https://flipperphoenix.xyz)
+
 **Get started:** [wiki/First-steps](https://github.com/PaulGG-Code/Flipper-Phoenix/wiki/First-steps)
+
 **Docs:** [Wiki](https://wiki.flipperphoenix.xyz)
+
 **Flasher:** [Installer](https://flipperphoenix.xyz/webinstaller)
 
 
