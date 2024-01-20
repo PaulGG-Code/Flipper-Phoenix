@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef MenuFunctions_h
 #define MenuFunctions_h
 
@@ -78,6 +80,7 @@ PROGMEM static lv_color_t buf[LV_HOR_RES_MAX * 10];
 
 PROGMEM static void ta_event_cb(lv_obj_t * ta, lv_event_t event);
 PROGMEM static void add_ssid_keyboard_event_cb(lv_obj_t * keyboard, lv_event_t event);
+PROGMEM static void html_list_cb(lv_obj_t * btn, lv_event_t event);
 PROGMEM static void ap_list_cb(lv_obj_t * btn, lv_event_t event);
 PROGMEM static void station_list_cb(lv_obj_t * btn, lv_event_t event);
 PROGMEM static void setting_dropdown_cb(lv_obj_t * btn, lv_event_t event);
@@ -116,6 +119,7 @@ class MenuFunctions
     String u_result = "";
 
     uint32_t initTime = 0;
+    uint8_t menu_start_index = 0;
 
 
     // Main menu stuff
@@ -142,8 +146,12 @@ class MenuFunctions
     Menu wifiGeneralMenu;
     Menu wifiAPMenu;
 
+    // WiFi General Menu
+    Menu htmlMenu;
+
     // Bluetooth menu stuff
     Menu bluetoothSnifferMenu;
+    Menu bluetoothAttackMenu;
 
     // Settings things menus
     Menu generateSSIDsMenu;
@@ -162,8 +170,10 @@ class MenuFunctions
     String callSetting(String key);
     void runBoolSetting(String ley);
     void displaySetting(String key, Menu* menu, int index);
-    void buttonSelected(uint8_t b);
-    void buttonNotSelected(uint8_t b);
+    void buttonSelected(uint8_t b, int8_t x = -1);
+    void buttonNotSelected(uint8_t b, int8_t x = -1);
+
+    uint8_t updateTouch(uint16_t *x, uint16_t *y, uint16_t threshold = 600);
 
   public:
     MenuFunctions();
@@ -186,13 +196,14 @@ class MenuFunctions
 
     void initLVGL();
     void deinitLVGL();
+    void selectEPHTMLGFX();
     void addSSIDGFX();
     void addAPGFX();
     void addStationGFX();
-    void buildButtons(Menu* menu, int starting_index = 0);
+    void buildButtons(Menu* menu, int starting_index = 0, String button_name = "");
     void changeMenu(Menu* menu);
     void drawStatusBar();
-    void displayCurrentMenu();
+    void displayCurrentMenu(uint8_t start_index = 0);
     void main(uint32_t currentTime);
     void RunSetup();
     void orientDisplay();

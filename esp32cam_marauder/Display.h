@@ -1,3 +1,5 @@
+#pragma once
+
 #ifndef Display_h
 #define Display_h
 
@@ -41,12 +43,12 @@ class Display
 {
   private:
     bool SwitchOn = false;
-    
+
     bool run_setup = true;
-    
+
     // For the byte we read from the serial port
     byte data = 0;
-    
+
     // A few test variables used during debugging
     boolean change_colour = 1;
     boolean selected = 1;
@@ -68,6 +70,7 @@ class Display
     bool tteBar = false;
     bool draw_tft = false;
     bool exit_draw = false;
+    bool headless_mode = false;
 
     uint8_t TOP_FIXED_AREA_2 = 48;
     uint8_t print_delay_1, print_delay_2 = 10;

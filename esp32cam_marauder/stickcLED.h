@@ -1,18 +1,18 @@
 #pragma once
 
-#ifndef xiaoLED_H
-#define xiaoLED_H
+#ifndef stickcLED_H
+#define stickcLED_H
 
 #include "configs.h"
 #include "settings.h"
 
 #include <Arduino.h>
 
-#define XIAO_LED_PIN 21
+#define STICKC_LED_PIN 10
 
 extern Settings settings_obj;
 
-class xiaoLED {
+class stickcLED {
 
     public:
         void RunSetup();
@@ -22,4 +22,4 @@ class xiaoLED {
         void offLED();
 };
 
-#endif  /* xiaoLED_H */
+#endif  /* stickcLED_H */

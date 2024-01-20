@@ -1,6 +1,6 @@
 /* FLASH SETTINGS
 Board: ESP32 Dev Module
-Check: https://wiki.flipperphoenix.xyz/devManual/Compilation/Compilation-of-the-firmware#board-settings
+Check: https://github.com/eried/flipperzero-mayhem/wiki/Compilation-of-the-firmware#board-settings
 */
 
 #include "configs.h"
@@ -64,6 +64,8 @@ bool camera_initialized = false;
   #include "flipperLED.h"
 #elif defined(XIAO_ESP32_S3)
   #include "xiaoLED.h"
+#elif defined(MARAUDER_M5STICKC)
+  #include "stickcLED.h"
 #else
   #include "LedInterface.h"
 #endif
@@ -146,6 +148,8 @@ CommandLine cli_obj;
   flipperLED flipper_led;
 #elif defined(XIAO_ESP32_S3)
   xiaoLED xiao_led;
+#elif defined(MARAUDER_M5STICKC)
+  stickcLED stickc_led;
 #else
   LedInterface led_obj;
 #endif
@@ -323,6 +327,17 @@ void setup()
   #ifdef HAS_SCREEN
     delay(2000);
 
+    // Do some stealth mode stuff
+    #ifdef HAS_BUTTONS
+      if (c_btn.justPressed()) {
+        display_obj.headless_mode = true;
+
+        backlightOff();
+
+        Serial.println("Headless Mode enabled");
+      }
+    #endif
+
     display_obj.clearScreen();
   
     display_obj.tft.setTextColor(TFT_CYAN, TFT_BLACK);
@@ -370,9 +385,9 @@ void setup()
         display_obj.tft.setTextColor(TFT_CYAN, TFT_BLACK);
       #endif
     }
-  #else
-    return;
   #endif
+
+  evil_portal_obj.setup();
 
   #ifdef HAS_BATTERY
     battery_obj.RunSetup();
@@ -406,6 +421,8 @@ void setup()
     flipper_led.RunSetup();
   #elif defined(XIAO_ESP32_S3)
     xiao_led.RunSetup();
+  #elif defined(MARAUDER_M5STICKC)
+    stickc_led.RunSetup();
   #else
     led_obj.RunSetup();
   #endif
@@ -454,7 +471,7 @@ void loop()
   currentTime = millis();
   bool mini = false;
 
-  #ifdef MARAUDER_MINI
+  #ifdef SCREEN_BUFFER
     mini = true;
   #endif
 
@@ -502,6 +519,8 @@ void loop()
     flipper_led.main();
   #elif defined(XIAO_ESP32_S3)
     xiao_led.main();
+  #elif defined(MARAUDER_M5STICKC)
+    stickc_led.main();
   #else
     led_obj.main(currentTime);
   #endif
