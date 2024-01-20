@@ -1,6 +1,6 @@
 /* FLASH SETTINGS
 Board: ESP32 Dev Module
-Check: https://github.com/eried/flipperzero-mayhem/wiki/Compilation-of-the-firmware#board-settings
+Check: Check: https://wiki.flipperphoenix.xyz/devManual/Compilation/Compilation-of-the-firmware#board-settings
 */
 
 #include "configs.h"
