@@ -1,6 +1,6 @@
 {
   "name": "PhoenixFirmware",
-  "version": "v0.12.0",
+  "version": "release",
   "builds": [
     {
       "chipFamily": "ESP32",

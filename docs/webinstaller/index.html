@@ -76,6 +76,14 @@
     strong {
       color: #fff;
     }
+    .changelog-box {
+      width: 80%; /* Adjust the width as needed */
+      border: 1px solid #0f0; /* Border for the rectangle */
+      overflow: auto; /* Add scrollbars if content overflows */
+      border-radius: 5px;
+      padding: 20px;
+      background-color: #111;
+  }
   </style>
 </head>
 
@@ -84,7 +92,7 @@
   <script type="module" src="https://unpkg.com/esp-web-tools@3.4.2/dist/web/install-button.js?module"></script>
   <div class="container">
     <div class="left-div">
-      <p>If you have <a href="https://flipper-xtre.me/update/" target="_blank">Xtreme firmware</a> on your Flipper Zero,
+      <p>If you have <a href="https://github.com/PaulGG-Code/Phoenix-Firmware/releases/latest" target="_blank">Phoenix firmware [Fork from Xtreme]</a> on your Flipper Zero,
         then the apps are already on <i>Apps/GPIO</i>. You can also manually install them, one by one, using the links
         below: </p>
       <ul>
@@ -131,6 +139,31 @@
         allowfullscreen></iframe>
     </div>
   </div>
+  <div class="changelog-box">
+    <a>Changelog</a><br><br>
+    <a>v0.13.6 2023-12-20</a><br>
+    * Updated Marauder to latest version<br>
+    * Updated Marauder companion to v0.6.6<br>
+    <br>
+    <a>v0.13.5 r1 2023-12-14</a><br>
+    * Enabled bluetooth functionality for Marauder<br>
+    <br>
+    <a>v0.13.5 2023-12-04</a><br>
+    * Updated Marauder to latest version<br>
+    * Updated Marauder companion to v0.6.5<br>
+    <br>
+    <a>v0.13.4 2023-11-19</a><br>
+    * Updated Marauder to latest version<br>
+    <br>
+  <a>v0.13.3 2023-11-08</a><br>
+    * Updated Marauder to latest version<br>
+    * Updated Marauder companion to v0.6.4<br>
+    <br>
+  <a>v0.12.0 2023-09-14</a><br>
+    * All the apps will have the version number now in the name<br>
+    * Updated Marauder code to latest version<br>
+    * Removed EvilPortal companion, since Marauder implements it now<br>
+    </div>
 </body>
 
 </html>
